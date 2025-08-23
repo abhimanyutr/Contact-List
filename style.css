@@ -1,4 +1,17 @@
 body{
+    padding: 0;
+    margin: 0;
     background-image: url(https://images.pexels.com/photos/5902266/pexels-photo-5902266.jpeg);
     background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+h1{
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 30px;
+    text-shadow: 5px 2px 5px rgb(255, 255, 255);
+}
+label{
+    align-items: center;
 }
