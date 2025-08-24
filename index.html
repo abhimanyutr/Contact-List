@@ -17,56 +17,71 @@
 </head>
 
 <body class="bg-dark">
+  <div class="container">
   <h1 class="text-white"> Contact List Manager</h1>
-  <ul type="none" class="d-flex justify-content-evenly mt-5 " style="font-size: x-large;font-weight: 900;">
-    <li></li>
+  
+  <ul type="none" class="d-flex justify-content-between mt-5 " style="font-size: x-large;font-weight: 900;">
+    
     <li class="bg-info shadow px-5">Name</li>
     <li class="bg-info px-5">Phone</li>
     <li class="bg-info px-5">Email</li>
-    <li class="bg-info px-5">Address</li>
-    <li> <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><img
-          src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3258053/add-user-icon-md.png" alt=""
+    <!-- <li class="bg-info px-5">Address</li> -->
+    <li> <button class=" btn m-0" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><img
+          src="https://cdn-icons-png.flaticon.com/512/5718/5718106.png" alt=""
           width="30px" height="30px"></button>
     </li>
+    <li></li>
+    <li></li>
   </ul>
-  <ul id="result">
-    
+  
+  <ul >
+    <li id="contactList" type="none">
+      <ul  class="d-flex justify-content-between mt-5 align-items-center "  >
+
+      </ul>
+    </li>
   </ul>
+  </div>
+ </div>
 
 
 
   <!-- Bootstrap modal -->
 
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div id="exampleModal" class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
         <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">New Contact</h1>
+          <h2 class="modal-title fs-5 fw-bold align-items-center text-black " id="exampleModalLabel">New Contact</h2>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <form>
             <div class="mb-3">
-              <label for="recipient-name" class="col-form-label">Name</label>
+              <label for="recipient-name" class="col-form-label text-black fw-bold">Name</label>
               <input type="text" class="form-control" id="recipient-name">
             </div>
             <div class="mb-3">
-              <label for="recipient-number" class="col-form-label">Phone</label>
+              <label for="recipient-number" class="col-form-label text-black fw-bold">Phone</label>
               <input type="tel" class="form-control" id="recipient-number" placeholder="+91 ">
             </div>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <label for="recipient-address" class="col-form-label">Address</label>
               <input type="text" class="form-control" id="recipient-address">
-            </div>
+            </div> -->
             <div class="mb-3">
-              <label for="recipient-email" class="col-form-label">Email</label>
+              <label for="recipient-email" class="col-form-label text-black fw-bold">Email</label>
               <input type="email" class="form-control" id="recipient-email">
             </div>
+            <div  class="mb-3">
+                <p id="popup" class="text-success text-center  fw-bold">
 
+                </p>
+            </div>
           </form>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-secondary text-muted" data-bs-dismiss="modal">Close</button>
           <button type="button" onclick="getDetails()" class="btn btn-primary">Save</button>
         </div>
       </div>

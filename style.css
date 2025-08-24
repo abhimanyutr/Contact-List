@@ -18,6 +18,7 @@ h1{
     text-shadow: 5px 2px 5px rgb(4, 4, 5);
     color: azure;
 }
+
 label{
     align-items: center;
 }
@@ -26,4 +27,9 @@ li{
 }
 button{
     cursor: pointer;
+    transition: transform 0.3s ease; 
 }
+button:hover{
+   transform: scale(1.1); /* scale up by 10% */
+}
+
