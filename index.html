@@ -1,69 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact List Manager</title>
-    <script src="./script.js"></script>
-    <link rel="stylesheet" href="./style.css">
-    <!-- bootstrap -->
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact List Manager</title>
+  <script src="./script.js"></script>
+  <link rel="stylesheet" href="./style.css">
+  <!-- bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <!-- fontAwosome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
 
-    </head>
-<body>
-    <h1> Contact List Manager</h1>
-    <ul>
-        <li>Name</li>
-        <li>Phone</li>
-        <li>Email</li>
-        <li>Address</li>
-    </ul>
-    <label for="personName">Name</label>
-    <input type="text" id="personName">
-    <br><br>
-    <label for="personPhone">Phone</label>
-    <input type="text" id="personPhone">
-    <br><br>
-    <label for="personEmail">Email</label>
-    <input type="text" id="personEmail">
-    <br><br>
-    <label for="personAddress">Address</label>
-    <input type="text" id="personAddress">
+<body class="bg-dark">
+  <h1 class="text-white"> Contact List Manager</h1>
+  <ul type="none" class="d-flex justify-content-evenly mt-5 " style="font-size: x-large;font-weight: 900;">
+    <li></li>
+    <li class="bg-info shadow px-5">Name</li>
+    <li class="bg-info px-5">Phone</li>
+    <li class="bg-info px-5">Email</li>
+    <li class="bg-info px-5">Address</li>
+    <li> <button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"><img
+          src="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3258053/add-user-icon-md.png" alt=""
+          width="30px" height="30px"></button>
+    </li>
+  </ul>
+  <ul id="result">
+    
+  </ul>
 
-    <!-- Bootstrap -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Open modal for @mdo</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@fat">Open modal for @fat</button>
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@getbootstrap">Open modal for @getbootstrap</button>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="recipient-name" class="col-form-label">Recipient:</label>
-            <input type="text" class="form-control" id="recipient-name">
-          </div>
-          <div class="mb-3">
-            <label for="message-text" class="col-form-label">Message:</label>
-            <textarea class="form-control" id="message-text"></textarea>
-          </div>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Send message</button>
+
+  <!-- Bootstrap modal -->
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">New Contact</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-3">
+              <label for="recipient-name" class="col-form-label">Name</label>
+              <input type="text" class="form-control" id="recipient-name">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-number" class="col-form-label">Phone</label>
+              <input type="tel" class="form-control" id="recipient-number" placeholder="+91 ">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-address" class="col-form-label">Address</label>
+              <input type="text" class="form-control" id="recipient-address">
+            </div>
+            <div class="mb-3">
+              <label for="recipient-email" class="col-form-label">Email</label>
+              <input type="email" class="form-control" id="recipient-email">
+            </div>
+
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" onclick="getDetails()" class="btn btn-primary">Save</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  <!-- bootstrap modal Ends -->
 
 
+  <!-- bootstrap Button -->
+  <div class="fixed-action-btn position-fixed bottom-0 end-0 m-5" id="fixed1" data-mdb-button-init data-mdb-ripple-init>
+    <a class="btn text-white btn-floating btn-lg" data-bs-toggle="modal" data-bs-target="#exampleModal"
+      data-bs-whatever="@mdo" style="background-color: #fdd835;"><i class="fas fa-user"></i></a>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+  </div>
+
+
+  <!-- bootstrap Button ends -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+    crossorigin="anonymous"></script>
+
+  <!-- JavaScript -->
+  <script>
+    
+  </script>
 </body>
+
 </html>
